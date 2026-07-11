@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Portal Access | Santhosh Kumar</title>
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Core Theme Stylesheet -->
+  <link rel="stylesheet" href="/css/style.css?v=1.0.3">
+  
+  <style>
+    /* Premium Login Portal Aesthetics override */
+    body {
+      background-color: var(--background-color, #090d16);
+      color: var(--text-color, #f8fafc);
+      font-family: var(--font-family), 'Outfit', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .login-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 440px;
+      padding: 20px;
+      z-index: 10;
+    }
+
+    .login-glass-card {
+      background: var(--glass-bg, rgba(255, 255, 255, 0.03));
+      border: 1px solid var(--glass-border, rgba(255, 255, 255, 0.08));
+      backdrop-filter: blur(var(--glass-blur, 16px));
+      -webkit-backdrop-filter: blur(var(--glass-blur, 16px));
+      border-radius: var(--border-radius, 16px);
+      padding: 40px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.5s ease, box-shadow 0.5s ease;
+    }
+
+    .login-glass-card:hover {
+      border-color: rgba(99, 102, 241, 0.3);
+      box-shadow: 0 25px 60px rgba(99, 102, 241, 0.15);
+    }
+
+    .login-logo-box {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background: linear-gradient(45deg, rgba(99, 102, 241, 0.1), rgba(168, 85, 247, 0.1));
+      color: var(--primary-color, #6366f1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2rem;
+      margin: 0 auto 20px;
+      border: 1px solid var(--glass-border, rgba(255, 255, 255, 0.08));
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    }
+
+    .login-header h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+
+    .login-header h2 span {
+      background: linear-gradient(45deg, var(--primary-color, #6366f1), var(--secondary-color, #a855f7));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .login-header p {
+      text-align: center;
+      font-size: 0.9rem;
+      opacity: 0.6;
+      margin-bottom: 35px;
+    }
+
+    /* Password Input Wrapper with eye icon toggle */
+    .password-input-wrapper {
+      position: relative;
+    }
+
+    .password-toggle-icon {
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      opacity: 0.5;
+      transition: opacity 0.3s;
+      z-index: 10;
+    }
+
+    .password-toggle-icon:hover {
+      opacity: 1;
+      color: var(--primary-color, #6366f1);
+    }
+
+    /* Form Fields Styling Override */
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+      display: block;
+      opacity: 0.7;
+    }
+
+    .btn-login {
+      background: linear-gradient(45deg, var(--primary-color, #6366f1), var(--secondary-color, #a855f7));
+      color: #fff;
+      font-weight: 700;
+      width: 100%;
+      margin-top: 15px;
+      box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+    }
+
+    .btn-login:hover {
+      box-shadow: 0 8px 25px rgba(99, 102, 241, 0.45);
+      transform: translateY(-2px);
+    }
+
+    .back-home-link {
+      display: block;
+      text-align: center;
+      font-size: 0.85rem;
+      margin-top: 25px;
+      color: var(--text-color, #f8fafc);
+      text-decoration: none;
+      opacity: 0.6;
+      transition: opacity 0.3s, color 0.3s;
+    }
+
+    .back-home-link:hover {
+      opacity: 1;
+      color: var(--primary-color, #6366f1);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Particle Gradients in Background -->
+  <div class="blur-blobs">
+    <div class="blob blob-1" style="width: 450px; height: 450px; top: -15%; left: -10%;"></div>
+    <div class="blob blob-2" style="width: 500px; height: 500px; bottom: -15%; right: -10%;"></div>
+  </div>
+
+  <div class="login-wrapper">
+    <div class="login-glass-card">
+      <div class="login-header">
+        <div class="login-logo-box">
+          <i class="fas fa-shield-halved"></i>
+        </div>
+        <h2>Admin <span>Access</span></h2>
+        <p>Authenticate to manage database collections</p>
+      </div>
+
+      <form id="login-form" class="contact-form">
+        <div class="form-group">
+          <label class="form-label" for="email">Admin Email Address</label>
+          <input type="email" id="email" class="form-control" placeholder="admin@example.com" required autocomplete="email">
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label" for="password">Security Password</label>
+          <div class="password-input-wrapper">
+            <input type="password" id="password" class="form-control" placeholder="••••••••" required autocomplete="current-password" style="padding-right: 45px;">
+            <i class="far fa-eye-slash password-toggle-icon" id="password-toggle-btn"></i>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-login btn" id="login-submit-btn">
+          <i class="fas fa-key"></i> Authenticate Account
+        </button>
+
+        <a href="/" class="back-home-link"><i class="fas fa-arrow-left"></i> Return to Portfolio Site</a>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification Alert Box -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="/js/auth.js"></script>
+  <script>
+    // Direct initialization of active theme styles
+    async function loadActiveTheme() {
+      try {
+        const res = await fetch(`${API_BASE_URL}/api/theme`);
+        if (res.ok) {
+          const theme = await res.json();
+          const root = document.documentElement;
+          root.style.setProperty('--primary-color', theme.primaryColor);
+          root.style.setProperty('--secondary-color', theme.secondaryColor);
+          root.style.setProperty('--accent-color', theme.accentColor);
+          root.style.setProperty('--background-color', theme.backgroundColor);
+          root.style.setProperty('--text-color', theme.textColor);
+          root.style.setProperty('--button-color', theme.buttonColor);
+          root.style.setProperty('--card-color', theme.cardColor);
+          root.style.setProperty('--navbar-color', theme.navbarColor);
+          root.style.setProperty('--footer-color', theme.footerColor);
+          root.style.setProperty('--border-radius', theme.borderRadius);
+          root.style.setProperty('--font-family', theme.fontFamily);
+
+          if (theme.glassmorphism) {
+            root.style.setProperty('--glass-bg', 'rgba(255, 255, 255, 0.03)');
+            root.style.setProperty('--glass-border', 'rgba(255, 255, 255, 0.08)');
+            root.style.setProperty('--glass-blur', '16px');
+          } else {
+            root.style.setProperty('--glass-bg', theme.cardColor);
+            root.style.setProperty('--glass-border', 'transparent');
+            root.style.setProperty('--glass-blur', '0px');
+          }
+        }
+      } catch (e) {
+        console.warn('Failed to load portal theme colors:', e);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', async () => {
+      // 1. Load styles
+      await loadActiveTheme();
+      
+      // 2. Perform guard check
+      await checkAuthAndRedirect();
+    });
+
+    // Toggle Password Visibility Action
+    const pInput = document.getElementById('password');
+    const pToggleBtn = document.getElementById('password-toggle-btn');
+    if (pToggleBtn && pInput) {
+      pToggleBtn.addEventListener('click', () => {
+        const isPass = pInput.type === 'password';
+        pInput.type = isPass ? 'text' : 'password';
+        pToggleBtn.classList.toggle('fa-eye');
+        pToggleBtn.classList.toggle('fa-eye-slash');
+      });
+    }
+
+    // Submit handler
+    const form = document.getElementById('login-form');
+    const submitBtn = document.getElementById('login-submit-btn');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Checking credentials...';
+
+      try {
+        const res = await fetch(`${API_BASE_URL}/api/auth/login`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ email, password })
+        });
+
+        const data = await res.json();
+
+        if (res.ok) {
+          setToken(data.token);
+          showToast('Authentication success! Opening console dashboard...', 'success');
+          setTimeout(() => {
+            window.location.href = '/admin-dashboard.html';
+          }, 1200);
+        } else {
+          showToast(data.error || 'Authentication rejected', 'error');
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = '<i class="fas fa-key"></i> Authenticate Account';
+        }
+      } catch (error) {
+        showToast('Connection error, please verify your server is running.', 'error');
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<i class="fas fa-key"></i> Authenticate Account';
+      }
+    });
+
+    // Toast alert utility function
+    function showToast(message, type = 'success') {
+      const container = document.getElementById('toast-container');
+      const toast = document.createElement('div');
+      toast.className = `toast ${type}`;
+      toast.innerHTML = `
+        <i class="${type === 'success' ? 'fas fa-check-circle' : 'fas fa-exclamation-triangle'}"></i>
+        <span>${message}</span>
+      `;
+      container.appendChild(toast);
+      setTimeout(() => {
+        toast.style.animation = 'slideOut 0.3s forwards';
+        toast.addEventListener('animationend', () => toast.remove());
+      }, 4000);
+    }
+  </script>
+</body>
+</html>

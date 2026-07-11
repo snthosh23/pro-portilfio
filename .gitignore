@@ -1,0 +1,26 @@
+# Dependency Directories
+node_modules/
+server/node_modules/
+
+# Local Environment Variables & Secrets
+.env
+server/.env
+server/config/serviceAccountKey.json
+serviceAccountKey.json
+
+# Local Mock Database File
+server/mock_db.json
+
+# Local Uploads Directory
+client/uploads/*
+!client/uploads/.gitkeep
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# Agent Logs & System Folders
+.gemini/
+.agents/
+.tempmediaStorage/
+*.log

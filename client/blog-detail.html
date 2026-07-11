@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Read Blog Article | Santhosh Kumar</title>
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Core Theme Stylesheet -->
+  <link rel="stylesheet" href="/css/style.css?v=1.0.2">
+  
+  <style>
+    .blog-detail-container {
+      max-width: 800px;
+      margin: 140px auto 100px;
+      padding: 0 20px;
+    }
+    .blog-detail-header {
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    .blog-detail-title {
+      font-size: 2.8rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin: 15px 0;
+    }
+    .blog-detail-meta {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      font-size: 0.9rem;
+      opacity: 0.7;
+      margin-bottom: 20px;
+    }
+    .blog-detail-cover {
+      width: 100%;
+      max-height: 450px;
+      object-fit: cover;
+      border-radius: var(--border-radius);
+      margin-bottom: 40px;
+      border: 1px solid var(--glass-border);
+    }
+    .blog-detail-body {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      opacity: 0.9;
+    }
+    .blog-detail-body h2, .blog-detail-body h3, .blog-detail-body h4 {
+      margin: 30px 0 15px;
+      font-weight: 700;
+    }
+    .blog-detail-body h3 {
+      font-size: 1.5rem;
+    }
+    .blog-detail-body p {
+      margin-bottom: 20px;
+    }
+    .blog-detail-body ul, .blog-detail-body ol {
+      margin-bottom: 20px;
+      padding-left: 20px;
+    }
+    .blog-detail-body blockquote {
+      border-left: 4px solid var(--primary-color);
+      padding-left: 20px;
+      font-style: italic;
+      margin: 30px 0;
+      opacity: 0.85;
+    }
+    .blog-detail-body code {
+      background: rgba(255,255,255,0.06);
+      padding: 3px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 0.95rem;
+    }
+    .blog-detail-body pre {
+      background: rgba(0,0,0,0.3);
+      padding: 20px;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 30px 0;
+      border: 1px solid var(--glass-border);
+    }
+    .blog-detail-body pre code {
+      background: none;
+      padding: 0;
+    }
+    .blog-tags-container {
+      margin-top: 50px;
+      padding-top: 20px;
+      border-top: 1px solid var(--glass-border);
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Page Loader -->
+  <div class="page-loader" id="page-loader">
+    <div class="loader-spinner"></div>
+  </div>
+
+  <!-- Interactive Custom Mouse Follower -->
+  <div class="mouse-follower" id="mouse-follower"></div>
+
+  <!-- Background Blobs (Dynamic Parallax) -->
+  <div class="blur-blobs">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar" id="navbar">
+    <a href="/" class="logo">
+      <i class="fas fa-cubes"></i>
+      <span>Santhosh.</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/#home">Home</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#skills">Skills</a></li>
+      <li><a href="/#experience">Timeline</a></li>
+      <li><a href="/#portfolio">Portfolio</a></li>
+      <li><a href="/blog.html" class="active">Blog</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="/#contact" class="btn btn-primary" style="padding: 8px 20px; font-size: 0.85rem;"><i class="fa-solid fa-paper-plane"></i> Hire Me</a>
+    </div>
+  </nav>
+
+  <!-- Blog Details Container -->
+  <article class="blog-detail-container">
+    <div class="blog-detail-header">
+      <a href="/blog.html" class="blog-link mb-3" style="display: inline-flex;"><i class="fas fa-arrow-left"></i> Back to Articles</a>
+      <span class="section-tag" id="article-category">Technology</span>
+      <h1 class="blog-detail-title" id="article-title">Article Title</h1>
+      <div class="blog-detail-meta">
+        <span><i class="far fa-calendar-alt"></i> <span id="article-date">July 11, 2026</span></span>
+        <span><i class="far fa-user"></i> By Santhosh Kumar</span>
+      </div>
+    </div>
+
+    <img id="article-cover" src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800" alt="Cover" class="blog-detail-cover">
+
+    <div class="blog-detail-body" id="article-content-body">
+      <!-- Compiled Content goes here -->
+    </div>
+
+    <div class="blog-tags-container" id="article-tags">
+      <!-- Tag list -->
+    </div>
+  </article>
+
+  <footer class="footer">
+    <div class="footer-bottom">
+      <p>&copy; 2026 Santhosh Kumar. All Rights Reserved.</p>
+      <p><a href="/admin-login.html" style="color: inherit; text-decoration: none; opacity: 0.6;"><i class="fas fa-lock"></i> Administration Panel</a></p>
+    </div>
+  </footer>
+
+  <!-- Scripts Integrations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="/js/main.js"></script>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const id = urlParams.get('id');
+
+      if (!id) {
+        window.location.href = '/blog.html';
+        return;
+      }
+
+      try {
+        const res = await fetch(`${API_URL}/api/portfolio/blogs/${id}`);
+        if (!res.ok) throw new Error();
+        const blog = await res.json();
+
+        // Populate elements
+        document.getElementById('article-title').textContent = blog.title;
+        document.title = `${blog.title} | Santhosh Kumar Blog`;
+        document.getElementById('article-category').textContent = blog.category;
+        document.getElementById('article-date').textContent = new Date(blog.date || blog.createdAt).toLocaleDateString();
+        
+        if (blog.image) {
+          document.getElementById('article-cover').src = blog.image;
+        }
+
+        // Parse markdown content
+        document.getElementById('article-content-body').innerHTML = compileMarkdown(blog.content || '');
+
+        // Render tags
+        const tagsWrap = document.getElementById('article-tags');
+        const tags = Array.isArray(blog.tags) ? blog.tags : (typeof blog.tags === 'string' ? blog.tags.split(',') : []);
+        if (tags && tags.length > 0) {
+          tagsWrap.innerHTML = tags.map(t => `<span class="project-tag">#${t.trim()}</span>`).join('');
+        }
+
+      } catch (e) {
+        document.getElementById('article-content-body').innerHTML = `<p class="text-center opacity-60">Article details could not be retrieved.</p>`;
+      }
+    });
+
+    // Reuse helper compiler markdown parser
+    function compileMarkdown(md) {
+      let html = md;
+      html = html.replace(/### (.*?)\n/g, '<h3>$1</h3>');
+      html = html.replace(/## (.*?)\n/g, '<h2>$1</h2>');
+      html = html.replace(/# (.*?)\n/g, '<h2>$1</h2>');
+      html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+      html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
+      html = html.replace(/^\* (.*?)$/gm, '• $1<br>');
+      html = html.replace(/^- (.*?)$/gm, '• $1<br>');
+      html = html.replace(/^> (.*?)$/gm, '<blockquote>$1</blockquote>');
+      html = html.replace(/```(.*?)\n([\s\S]*?)```/g, '<pre><code>$2</code></pre>');
+      html = html.replace(/`(.*?)`/g, '<code>$1</code>');
+      return html;
+    }
+  </script>
+</body>
+</html>

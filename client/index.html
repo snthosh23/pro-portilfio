@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Santhosh Kumar | Senior UI/UX Designer & Full Stack Developer</title>
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Core Theme Stylesheet -->
+  <link rel="stylesheet" href="/css/style.css?v=1.0.2">
+</head>
+<body>
+
+  <!-- Page Loader -->
+  <div class="page-loader" id="page-loader">
+    <div class="loader-spinner"></div>
+    <h3 style="font-weight: 600; letter-spacing: 2px;">SANTHOSH KUMAR</h3>
+    <p class="opacity-60" style="font-size: 0.85rem; margin-top: 5px;">Loading Premium Experience...</p>
+  </div>
+
+  <!-- Interactive Custom Mouse Follower -->
+  <div class="mouse-follower" id="mouse-follower"></div>
+
+  <!-- Background Blobs (Dynamic Parallax) -->
+  <div class="blur-blobs">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar" id="navbar">
+    <a href="#home" class="logo">
+      <i class="fas fa-cubes"></i>
+      <span>Santhosh.</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Timeline</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#blogs">Blog</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="#contact" class="btn btn-primary" style="padding: 8px 20px; font-size: 0.85rem;"><i class="fa-solid fa-paper-plane"></i> Hire Me</a>
+      <i class="fas fa-bars menu-toggle"></i>
+    </div>
+  </nav>
+
+  <!-- -------------------------------------------------------------
+       SECTION: Hero Landing Section
+  ------------------------------------------------------------- -->
+  <section id="home" class="hero">
+    <div class="hero-container">
+      <div class="hero-content">
+        <h4>Welcome to my digital space</h4>
+        <h1>Hi, I'm <span class="profile-name">Santhosh Kumar</span></h1>
+        <div class="hero-typing-wrap">
+          I am a <span id="hero-typing-text" style="color: var(--primary-color); font-weight: 700; border-right: 2px solid var(--primary-color);"></span>
+        </div>
+        <p class="hero-description profile-title" id="about-intro-text">
+          Crafting premium, enterprise-grade digital experiences with high-end aesthetics, robust security, and advanced MVC architectures.
+        </p>
+        <div class="hero-actions">
+          <a href="#portfolio" class="btn btn-primary"><i class="fa-regular fa-folder-closed"></i> View Portfolio</a>
+          <a href="#contact" class="btn btn-secondary"><i class="fa-regular fa-envelope"></i> Let's Talk</a>
+        </div>
+      </div>
+
+      <div class="hero-image-container">
+        <div class="hero-image-wrapper">
+          <img id="hero-profile-image" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500" alt="Santhosh Profile" class="hero-profile-img">
+        </div>
+        <!-- Floating glassmorphic widgets -->
+        <div class="floating-badge badge-1">
+          <i class="fas fa-medal" style="color: var(--secondary-color); font-size: 1.4rem;"></i>
+          <div>
+            <strong style="display:block; font-size: 0.95rem;">8+ Years</strong>
+            <small style="opacity: 0.7; font-size: 0.75rem;">Quality Experience</small>
+          </div>
+        </div>
+        <div class="floating-badge badge-2">
+          <i class="fas fa-shield-halved" style="color: var(--accent-color); font-size: 1.4rem;"></i>
+          <div>
+            <strong style="display:block; font-size: 0.95rem;">Secure MVC</strong>
+            <small style="opacity: 0.7; font-size: 0.75rem;">Premium Architecture</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- -------------------------------------------------------------
+       SECTION: Animated Counters
+  ------------------------------------------------------------- -->
+  <section class="counters-section">
+    <div class="counters-grid">
+      <div class="counter-card">
+        <h3 class="counter-val" data-val="8">8</h3>
+        <p>Years Experience</p>
+      </div>
+      <div class="counter-card">
+        <h3 class="counter-val" data-val="120">120</h3>
+        <p>Projects Finished</p>
+      </div>
+      <div class="counter-card">
+        <h3 class="counter-val" data-val="98">98</h3>
+        <p>Happy Tech Clients</p>
+      </div>
+      <div class="counter-card">
+        <h3 class="counter-val" data-val="2500">2500</h3>
+        <p>Cups of Coffee</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- -------------------------------------------------------------
+       SECTION: About Section & Bio
+  ------------------------------------------------------------- -->
+  <section id="about" class="section">
+    <div class="section-header">
+      <span class="section-tag">Biography</span>
+      <h2 class="section-title">About <span>Me</span></h2>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-bio-box">
+        <h3 class="mb-3" style="font-size: 1.5rem; font-weight: 700;">Designing products that people love.</h3>
+        <p class="opacity-80 mb-4" id="about-bio-text" style="font-size: 1.05rem;">
+          I am a software architect and designer who builds premium digital products. I combine clean MVC engineering patterns with immersive glassmorphism aesthetics and micro-animations. I specialize in Node.js, Express, Firebase, and Vanilla ES6 scripting.
+        </p>
+        
+        <div class="about-details">
+          <div class="detail-item">
+            <label>Name</label>
+            <span class="profile-name">Santhosh Kumar</span>
+          </div>
+          <div class="detail-item">
+            <label>Email</label>
+            <span><a href="mailto:santhosh@example.com" id="contact-email" style="color: inherit; text-decoration: none;">santhosh@example.com</a></span>
+          </div>
+          <div class="detail-item">
+            <label>Current Location</label>
+            <span id="contact-address">Silicon Valley, CA</span>
+          </div>
+          <div class="detail-item">
+            <label>Employment</label>
+            <span>Available for Hire</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-resume-box">
+        <div class="glass-card text-center" style="padding: 40px 30px;">
+          <i class="far fa-file-pdf" style="font-size: 3rem; color: var(--primary-color); margin-bottom: 20px; display: block;"></i>
+          <h4 style="font-size: 1.25rem; margin-bottom: 10px;">Looking for my CV?</h4>
+          <p class="opacity-70 mb-4" style="font-size: 0.9rem;">Download my latest resume PDF to explore detailed stack expertise and academic logs.</p>
+          <a id="resume-download-btn" href="#" target="_blank" class="btn btn-primary w-100"><i class="fas fa-cloud-arrow-down"></i> Download Resume</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- -------------------------------------------------------------
+       SECTION: Skills Progress Cards
+  ------------------------------------------------------------- -->
+  <section id="skills" class="section" style="background: rgba(255,255,255,0.01);">
+    <div class="section-header">
+      <span class="section-tag">Competency</span>
+      <h2 class="section-title">My <span>Skills</span></h2>
+    </div>
+
+    <div class="skills-container" id="skills-container">
+      <!-- Loaded dynamically via JavaScript -->
+    </div>
+  </section>
+
+  <!-- -------------------------------------------------------------
+       SECTION: Education & Experience Timelines
+  ------------------------------------------------------------- -->
+  <section id="experience" class="section">
+    <div class="section-header">
+      <span class="section-tag">Career Path</span>
+      <h2 class="section-title">My <span>Timeline</span></h2>
+    </div>
+
+    <div class="timeline-grid">
+      <!-- Experience Column -->
+      <div class="timeline-column">
+        <h3><i class="fas fa-briefcase"></i> Work Experience</h3>
+        <div class="timeline-list" id="experience-timeline-list">
+          <!-- Loaded dynamically -->
+        </div>
+      </div>
+
+      <!-- Education Column -->
+      <div class="timeline-column">
+        <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+        <div class="timeline-list" id="education-timeline-list">
+          <!-- Loaded dynamically -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- -------------------------------------------------------------
+       SECTION: Portfolio Grid with Filters and Search
+  ------------------------------------------------------------- -->
+  <section id="portfolio" class="section" style="background: rgba(255,255,255,0.01);">
+    <div class="section-header">
+      <span class="section-tag">Case Studies</span>
+      <h2 class="section-title">Featured <span>Projects</span></h2>
+    </div>
+
+    <div class="portfolio-search-bar">
+      <input type="text" id="portfolio-search-input" placeholder="Search projects by name, tags, or description...">
+      <i class="fas fa-search"></i>
+    </div>
+
+    <div class="portfolio-filters" id="portfolio-filters">
+      <!-- Filter buttons loaded dynamically -->
+    </div>
+
+    <div class="portfolio-grid" id="portfolio-grid">
+      <!-- Projects list loaded dynamically -->
+    </div>
+  </section>
+
+  <!-- -------------------------------------------------------------
+       SECTION: Achievements Awards
+  ------------------------------------------------------------- -->
+  <section id="achievements" class="section">
+    <div class="section-header">
+      <span class="section-tag">Accolades</span>
+      <h2 class="section-title">Awards & <span>Achievements</span></h2>
+    </div>
+    <div class="certs-grid" id="achievements-grid">
+      <!-- Loaded dynamically -->
+    </div>
+  </section>
+
+  <!-- -------------------------------------------------------------
+       SECTION: Professional Certifications
+  ------------------------------------------------------------- -->
+  <section id="certifications" class="section" style="background: rgba(255,255,255,0.01);">
+    <div class="section-header">
+      <span class="section-tag">Credentials</span>
+      <h2 class="section-title">Certifications & <span>Badges</span></h2>
+    </div>
+    <div class="certs-grid" id="certs-grid">
+      <!-- Loaded dynamically -->
+    </div>
+  </section>
+
+  <!-- -------------------------------------------------------------
+       SECTION: Media Gallery with Lightbox Popup
+  ------------------------------------------------------------- -->
+  <section id="gallery" class="section">
+    <div class="section-header">
+      <span class="section-tag">Visuals</span>
+      <h2 class="section-title">Creative <span>Gallery</span></h2>
+    </div>
+    <div class="gallery-grid" id="gallery-grid">
+      <!-- Gallery items loaded dynamically -->
+    </div>
+  </section>
+
+  <!-- -------------------------------------------------------------
+       SECTION: Blogs listing
+  ------------------------------------------------------------- -->
+  <section id="blogs" class="section" style="background: rgba(255,255,255,0.01);">
+    <div class="section-header">
+      <span class="section-tag">Publications</span>
+      <h2 class="section-title">Latest <span>Articles</span></h2>
+    </div>
+    <div class="blogs-grid" id="blogs-grid">
+      <!-- Blogs lists loaded dynamically -->
+    </div>
+  </section>
+
+  <!-- -------------------------------------------------------------
+       SECTION: Testimonials Slider Carousel
+  ------------------------------------------------------------- -->
+  <section id="testimonials" class="section">
+    <div class="section-header">
+      <span class="section-tag">Endorsements</span>
+      <h2 class="section-title">Client <span>Reviews</span></h2>
+    </div>
+    <div class="testimonials-slider">
+      <div class="testimonial-wrapper">
+        <div class="testimonial-track" id="testimonial-track">
+          <!-- Loaded dynamically -->
+        </div>
+      </div>
+      <div class="slider-nav" id="testimonial-dots"></div>
+    </div>
+  </section>
+
+  <!-- -------------------------------------------------------------
+       SECTION: Contact Form & Info Card
+  ------------------------------------------------------------- -->
+  <section id="contact" class="section" style="background: rgba(255,255,255,0.01);">
+    <div class="section-header">
+      <span class="section-tag">Inquire</span>
+      <h2 class="section-title">Contact <span>Me</span></h2>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3 style="font-size: 1.5rem; font-weight: 700;">Let's make something amazing.</h3>
+        <p class="opacity-70 mb-4">Have an upcoming application, design layout, or security audit requirement? Send a message and let's configure your solution.</p>
+        
+        <div class="contact-info-card">
+          <div class="contact-icon-box"><i class="fas fa-phone"></i></div>
+          <div class="contact-text">
+            <h4>Call Directly</h4>
+            <a href="#" id="contact-phone">+1 (234) 567-8900</a>
+          </div>
+        </div>
+
+        <div class="contact-info-card">
+          <div class="contact-icon-box"><i class="fas fa-envelope"></i></div>
+          <div class="contact-text">
+            <h4>Email Inquiry</h4>
+            <a href="#" id="contact-email">santhosh@example.com</a>
+          </div>
+        </div>
+
+        <div class="contact-social-links">
+          <a href="#" class="social-icon-btn social-link-github" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="#" class="social-icon-btn social-link-linkedin" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="social-icon-btn social-link-twitter" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" id="contact-whatsapp" class="social-icon-btn" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+
+      <div class="glass-card">
+        <form id="contact-form" class="contact-form">
+          <div class="form-group-row">
+            <div class="form-group">
+              <label class="form-label" for="form-name">Full Name</label>
+              <input type="text" id="form-name" class="form-control" placeholder="John Doe" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="form-email">Email Address</label>
+              <input type="email" id="form-email" class="form-control" placeholder="john@example.com" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="form-subject">Subject Line</label>
+            <input type="text" id="form-subject" class="form-control" placeholder="Project Inquiry" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="form-message">Detailed Message</label>
+            <textarea id="form-message" class="form-control" placeholder="Tell me about your project specifications..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary w-100 mt-3"><i class="fa-solid fa-paper-plane"></i> Send Secure Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- -------------------------------------------------------------
+       SECTION: Footer & Newsletter
+  ------------------------------------------------------------- -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-column">
+        <a href="#home" class="logo">
+          <i class="fas fa-cubes"></i>
+          <span>Santhosh.</span>
+        </a>
+        <p class="footer-desc">Premium personal portfolio demonstrating architectural clean solutions and responsive design aesthetics.</p>
+      </div>
+      <div class="footer-column">
+        <h4>Navigation Links</h4>
+        <ul class="footer-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#portfolio">Portfolio Grid</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Stay Updated</h4>
+        <p class="opacity-70 mb-3" style="font-size: 0.85rem;">Subscribe to my newsletter log for monthly visual design details and backend insights.</p>
+        <form id="newsletter-form" class="newsletter-form">
+          <input type="email" class="form-control" placeholder="Your email address" style="padding: 10px 15px;" required>
+          <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i></button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Santhosh Kumar. All Rights Reserved.</p>
+      <p><a href="/admin-login.html" style="color: inherit; text-decoration: none; opacity: 0.6;"><i class="fas fa-lock"></i> Administration Panel</a></p>
+    </div>
+  </footer>
+
+  <!-- Lightbox Gallery Modal -->
+  <div class="lightbox-modal" id="lightbox-modal">
+    <span class="lightbox-close" id="lightbox-close">&times;</span>
+    <div id="lightbox-content-container" style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%;"></div>
+  </div>
+
+  <!-- Toast Notification Alert -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Scripts Integrations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  
+  <script src="/js/main.js"></script>
+  
+  <script>
+    // GSAP Scroll reveals and counters increments
+    gsap.registerPlugin(ScrollTrigger);
+
+    window.addEventListener('load', () => {
+      // 1. Text reveals
+      gsap.from('.hero-content h1', {
+        opacity: 0,
+        y: 50,
+        duration: 1.2,
+        ease: 'power3.out',
+        delay: 1.2
+      });
+
+      gsap.from('.hero-content h4, .hero-content p, .hero-actions', {
+        opacity: 0,
+        y: 30,
+        duration: 1,
+        stagger: 0.2,
+        ease: 'power3.out',
+        delay: 1.5
+      });
+
+      gsap.from('.hero-image-container', {
+        opacity: 0,
+        scale: 0.8,
+        duration: 1.5,
+        ease: 'power3.out',
+        delay: 1.2
+      });
+
+      // 2. Animate Counter numbers
+      const counterVals = document.querySelectorAll('.counter-val');
+      counterVals.forEach(item => {
+        const val = parseInt(item.getAttribute('data-val'));
+        gsap.fromTo(item, { textContent: 0 }, {
+          textContent: val,
+          duration: 3,
+          ease: 'power1.out',
+          scrollTrigger: {
+            trigger: '.counters-section',
+            start: 'top 80%',
+            toggleActions: 'play none none none'
+          },
+          snap: { textContent: 1 },
+          stagger: 0.1
+        });
+      });
+
+      // 3. Scroll Reveal Cards
+      gsap.from('.glass-card', {
+        scrollTrigger: {
+          trigger: '.glass-card',
+          start: 'top 85%',
+        },
+        opacity: 0,
+        y: 40,
+        duration: 1,
+        stagger: 0.15,
+        ease: 'power3.out'
+      });
+    });
+  </script>
+
+  <!-- Firebase App & Analytics SDK Integrations -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-analytics.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyCM4IlRGIaTCDzoLxdByWcEKWOWHEbge_s",
+      authDomain: "portfolio-df8a8.firebaseapp.com",
+      projectId: "portfolio-df8a8",
+      storageBucket: "portfolio-df8a8.firebasestorage.app",
+      messagingSenderId: "20796838864",
+      appId: "1:20796838864:web:1fa5bb3842df3200319fd5",
+      measurementId: "G-3RZW267PM1"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
+</body>
+</html>

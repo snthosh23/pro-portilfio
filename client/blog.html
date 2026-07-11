@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Publications & Articles | Santhosh Kumar</title>
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Core Theme Stylesheet -->
+  <link rel="stylesheet" href="/css/style.css?v=1.0.2">
+  
+  <style>
+    .blog-hero {
+      padding: 160px 8% 80px;
+      text-align: center;
+      background: rgba(255,255,255,0.01);
+      border-bottom: 1px solid var(--glass-border);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Page Loader -->
+  <div class="page-loader" id="page-loader">
+    <div class="loader-spinner"></div>
+  </div>
+
+  <!-- Interactive Custom Mouse Follower -->
+  <div class="mouse-follower" id="mouse-follower"></div>
+
+  <!-- Background Blobs (Dynamic Parallax) -->
+  <div class="blur-blobs">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar" id="navbar">
+    <a href="/" class="logo">
+      <i class="fas fa-cubes"></i>
+      <span>Santhosh.</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/#home">Home</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#skills">Skills</a></li>
+      <li><a href="/#experience">Timeline</a></li>
+      <li><a href="/#portfolio">Portfolio</a></li>
+      <li><a href="/blog.html" class="active">Blog</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="/#contact" class="btn btn-primary" style="padding: 8px 20px; font-size: 0.85rem;"><i class="fa-solid fa-paper-plane"></i> Hire Me</a>
+    </div>
+  </nav>
+
+  <!-- Blog Banner -->
+  <header class="blog-hero">
+    <span class="section-tag">Insights & Tech Guides</span>
+    <h1 style="font-size: 3rem; font-weight: 800; margin-top: 10px;">Technical <span style="background: linear-gradient(45deg, var(--primary-color), var(--secondary-color)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Publications</span></h1>
+    <p class="opacity-70 mt-2" style="max-width: 600px; margin: 0 auto; font-size: 1.1rem;">Thoughts on clean software architectures, progressive web visuals, UI/UX systems, and responsive full stack frameworks.</p>
+  </header>
+
+  <!-- Blogs grid -->
+  <main class="section">
+    <div class="blogs-grid" id="blogs-list-grid">
+      <!-- Loaded dynamically -->
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-bottom">
+      <p>&copy; 2026 Santhosh Kumar. All Rights Reserved.</p>
+      <p><a href="/admin-login.html" style="color: inherit; text-decoration: none; opacity: 0.6;"><i class="fas fa-lock"></i> Administration Panel</a></p>
+    </div>
+  </footer>
+
+  <!-- Scripts Integrations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="/js/main.js"></script>
+  
+  <script>
+    // Fetch and load blogs specific to this page
+    document.addEventListener('DOMContentLoaded', async () => {
+      const grid = document.getElementById('blogs-list-grid');
+      if (!grid) return;
+
+      try {
+        const res = await fetch(`${API_URL}/api/portfolio/blogs`);
+        const blogs = await res.json();
+        const published = blogs.filter(b => b.status === 'published');
+
+        if (published.length === 0) {
+          grid.innerHTML = '<p class="opacity-60 text-center w-full col-span-3">No publications found.</p>';
+          return;
+        }
+
+        grid.innerHTML = published.map(blog => `
+          <div class="glass-card blog-card">
+            <img src="${blog.image || 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=600'}" alt="${blog.title}" class="blog-cover">
+            <div class="blog-body">
+              <span class="blog-date">${new Date(blog.date || blog.createdAt).toLocaleDateString()}</span>
+              <h3><a href="/blog-detail.html?id=${blog.id}">${blog.title}</a></h3>
+              <p class="blog-desc">${stripHtml(blog.content || '').substring(0, 125)}...</p>
+              <a href="/blog-detail.html?id=${blog.id}" class="blog-link">Read Full Post <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        `).join('');
+
+      } catch (e) {
+        console.error('Failed to load articles:', e);
+      }
+    });
+  </script>
+</body>
+</html>
