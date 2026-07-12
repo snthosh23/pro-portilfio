@@ -183,11 +183,12 @@ async function loadProfile() {
     // Contact Details
     const address = document.getElementById('contact-address');
     if (address) address.textContent = profile.address;
-    const email = document.getElementById('contact-email');
-    if (email) {
-      email.textContent = profile.email;
-      email.href = `mailto:${profile.email}`;
-    }
+    
+    document.querySelectorAll('.profile-email').forEach(el => {
+      el.textContent = profile.email;
+      el.href = `mailto:${profile.email}`;
+    });
+
     const phone = document.getElementById('contact-phone');
     if (phone) {
       phone.textContent = profile.phone;
